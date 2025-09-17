@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Browser Lag Demo</title>
+</head>
+<body>
+  <h1>Lag Test Start</h1>
+  <button onclick="freeze()">Click to Lag (careful)</button>
+
+  <script>
+    function freeze() {
+      let end = Date.now() + 10000; // 10 seconds
+      while (Date.now() < end) {
+        // busy loop - CPU 100%
+        Math.sqrt(Math.random() * 999999);
+      }
+      alert("Freeze finished!");
+    }
+  </script>
+</body>
+</html>
